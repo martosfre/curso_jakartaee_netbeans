@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <h:outputStylesheet library="css" name="sysfac.css"/>
+        <h:outputScript library="js" name="sysfac.js"/>
+    </h:head>
+    <h:body>
+        <h:form id="frmLog">
+            <p:panelGrid id="panGriLog" columns="2" style="width: 70%">
+                <p:inputText id="txtNomUsu" value="#{loginBean.nombreUsu}" placeholder="Usuario" maxlength="10" 
+                             required="true" requiredMessage="Usuario requerido"/>
+                <p:message for="txtNomUsu"/>
+                <p:password id="ptxtClaUsu" value="#{loginBean.claveUsu}" placeholder="Clave:" maxlength="10" 
+                            required="true" requiredMessage="Clave requerida"/>
+                <p:message for="ptxtClaUsu"/>
+            </p:panelGrid>
+            <p:panelGrid id="panGriBot" columns="1" style="width: 70%">
+                <p:commandButton value="Ingresar" process="@this :frmLog:panGriLog" actionListener="#{loginBean.validarUsuario}" update=":frmLog:panGriLog"/>
+            </p:panelGrid>
+
+        </h:form>
+    </h:body>
+</html>

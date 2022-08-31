@@ -41,6 +41,12 @@
             <artifactId>primefaces-extensions</artifactId>
             <version>${primefaces-version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.adminfaces</groupId>
+            <artifactId>admin-template</artifactId>
+            <version>1.5.1</version>
+            <classifier>javax</classifier>
+        </dependency>
     </dependencies>
     
     <build>
